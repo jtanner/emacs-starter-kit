@@ -87,3 +87,9 @@
 (global-set-key (kbd "C-s-<268632078>") 'scroll-up-keep-cursor)
 
 
+(defun kill-buffer-and-delete-window ()
+  (interactive)
+  (kill-this-buffer)
+  (unless (= 1 (count-windows)) (delete-window)))
+(global-set-key [(control super k)] 'kill-buffer-and-delete-window)
+(global-set-key [(control super clear)] 'kill-buffer-and-delete-window)
