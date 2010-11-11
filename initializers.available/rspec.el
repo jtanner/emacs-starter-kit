@@ -2,7 +2,7 @@
 
 (require 'rspec-mode)
 
-(setq rspec-opts "--drb --color")
+(setq rspec-opts "--drb --color --diff")
 
 (defun rspec-core-options (&optional default-options)
   "Returns string of options that instructs spec to use spec.opts file if it exists, or sensible defaults otherwise"
@@ -24,7 +24,7 @@
 (defun rspec-run-single-file (spec-file &rest opts)
   "Runs spec with the specified options"
   (rspec-register-verify-redo (cons 'rspec-run-single-file (cons spec-file opts)))
-  (compile (concat "rspec " spec-file " " (rspec-format-opts opts)) t)
+  (compile (concat "bundle exec spec " spec-file " " (rspec-format-opts opts)) t)
   (end-of-buffer-other-window 0))
 
 (defun rspec-toggle-spec-and-target-other-window ()
@@ -39,3 +39,7 @@
 
 (eval-after-load 'ruby-mode
   '(define-key ruby-mode-map (kbd "C-c , s-t") 'rspec-toggle-spec-and-target-other-window))
+
+;; bind to CMD-r and CMD-R like in Textmate
+(define-key rspec-mode-keymap [(super r)] 'rspec-verify)
+(define-key rspec-mode-keymap [(super R)] 'rspec-verify-single)
