@@ -8,9 +8,8 @@
 
 (custom-set-faces
  '(magit-item-highlight ((((class color) (background dark)) (:background "#222222"))))
- ;; '(magit-diff-add ((((class color) (background dark)) (:foreground "lime green"))))
- ;; '(magit-diff-del ((((class color) (background dark)) (:foreground "IndianRed"))))
  '(magit-diff-hunk-header ((t (:inherit magit-header :foreground "yellow" :slant italic))))
+ '(yas/field-highlight-face ((t (:background "DimGrey"))))
  )
 
 ;; highlight current line
@@ -93,3 +92,4 @@
   (unless (= 1 (count-windows)) (delete-window)))
 (global-set-key [(control super k)] 'kill-buffer-and-delete-window)
 (global-set-key [(control super clear)] 'kill-buffer-and-delete-window)
+
