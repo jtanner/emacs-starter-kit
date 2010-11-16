@@ -57,7 +57,7 @@
          ,(face "warning" "white" *red*)
          (gui-element ,(color *background* "#D4D0C8"))
          (region ,(color "black" *region*))
-         (mode-line ,(color *background* "grey75"))
+         (mode-line ,(color "black" "#FFFF77"))
          (highlight ,(color nil *current-line*))
          (highline-face ,(color nil *current-line*))
          (italic ((t (nil))))
