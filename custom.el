@@ -29,7 +29,7 @@
  '(quack-remap-find-file-bindings-p nil)
  '(rails-indent-and-complete nil)
  '(ruby-electric-expand-delimiters-list (quote (123 91 40 39 34 96)))
- '(safe-local-variable-values (quote ((ack-arguments "--ignore-dir=ruby") (*textmate-gf-exclude* . "/\\.|vendor|ruby/gems|cxlasses|fixtures|tmp|log|build|\\.xcodeproj|\\.nib|\\.framework|\\.app|\\.pbproj|\\.pbxproj|\\.xcode|\\.xcodeproj|\\.bundle|\\.pyc") (ruby-compilation-executable . "ruby") (ruby-compilation-executable . "ruby1.8") (ruby-compilation-executable . "ruby1.9") (ruby-compilation-executable . "rbx") (ruby-compilation-executable . "jruby"))))
+ '(safe-local-variable-values (quote ((textmate-gf-exclude . "(/|^)(\\.+[^/]+|vendor|tmp|log|classes|build)($|/)|(\\.xcodeproj|\\.nib|\\.framework|\\.app|\\.pbproj|\\.pbxproj|\\.xcode|\\.xcodeproj|\\.bundle|\\.pyc)(/|$)") (textmate-project-roots ".dir-locals.el") (ack-arguments "--ignore-dir=ruby") (*textmate-gf-exclude* . "/\\.|vendor|ruby/gems|cxlasses|fixtures|tmp|log|build|\\.xcodeproj|\\.nib|\\.framework|\\.app|\\.pbproj|\\.pbxproj|\\.xcode|\\.xcodeproj|\\.bundle|\\.pyc") (ruby-compilation-executable . "ruby") (ruby-compilation-executable . "ruby1.8") (ruby-compilation-executable . "ruby1.9") (ruby-compilation-executable . "rbx") (ruby-compilation-executable . "jruby"))))
  '(sentence-end-double-space nil)
  '(sh-basic-offset 2)
  '(sh-indentation 2)
@@ -41,8 +41,7 @@
  '(textile-browser-command (quote ("open" "-a" "Safari")))
  '(tls-program (quote ("openssl s_client -connect %h:%p -no_ssl2 -ign_eof")))
  '(toolbar-mail-reader (quote gnus))
- '(toolbar-news-reader (quote gnus))
- '(truncate-lines t))
+ '(toolbar-news-reader (quote gnus)))
 
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
