@@ -1,7 +1,7 @@
-(defcustom rvm-default-ruby-name "ruby-1.8.7-p249"
+(defcustom rvm-default-ruby-name "ruby-1.8.7-p248"
   "The name of the ruby interpreter to use on startup, as shown by `rvm list'")
 
-(defcustom rvm-ruby-187-name "ruby-1.8.7-p249"
+(defcustom rvm-ruby-187-name "ruby-1.8.7-p248"
   "The name of the ruby 1.8.7 interpreter, as shown by `rvm list'")
 
 (defcustom rvm-ruby-192-name "ruby-1.9.2-p0"
