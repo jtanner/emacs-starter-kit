@@ -50,7 +50,10 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- )
+ '(magit-diff-hunk-header ((t (:inherit magit-header :foreground "yellow" :slant italic))))
+ '(magit-item-highlight ((((class color) (background dark)) (:background "#222222"))))
+ '(show-paren-match ((((class color) (background dark)) (:background "#C25F9E" :foreground "#F0EE75"))))
+ '(yas/field-highlight-face ((t (:background "DimGrey")))))
 
 (load (concat dotfiles-dir "initializers.el"))
 
