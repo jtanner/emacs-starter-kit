@@ -67,6 +67,7 @@
          (bold ((t (:bold t))))
          (bold-italic ((t (:bold t))))
          (underline ((nil (:underline nil))))
+         (viper-minibuffer-emacs ((((class color)) nil)))
 
          ;; magit
          (magit-item-highlight ((((class color) (background dark)) (:background "#222222"))))
