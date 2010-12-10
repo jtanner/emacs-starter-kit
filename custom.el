@@ -13,6 +13,7 @@
  '(erc-autojoin-channels-alist (quote (("freenode.net"))))
  '(erc-autojoin-mode t)
  '(erc-modules (quote (autojoin button completion fill irccontrols list log match menu move-to-prompt netsplit networks noncommands readonly ring stamp track)))
+ '(ffap-machine-p-known (quote reject)) ; so ido-use-filename-at-point doesn't try to ping strange domains
  '(global-auto-revert-mode t)
  '(gnuserv-program (concat exec-directory "/gnuserv"))
  '(hl-paren-background-colors nil)
