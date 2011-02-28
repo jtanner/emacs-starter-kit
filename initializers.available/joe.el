@@ -6,12 +6,6 @@
 
 (color-theme-ir-black)
 
-(custom-set-faces
- '(magit-item-highlight ((((class color) (background dark)) (:background "#222222"))))
- '(magit-diff-hunk-header ((t (:inherit magit-header :foreground "yellow" :slant italic))))
- '(yas/field-highlight-face ((t (:background "DimGrey"))))
- )
-
 ;; highlight current line
 (global-hl-line-mode 1)
 
@@ -28,10 +22,9 @@
             (setq default-frame-alist
                   '((left . 80) (width . 223) (height . 63)))
           (setq default-frame-alist
-                '((left . 0) (width . 205) (height . 58))))
+                '((left . 56) (width . 198) (height . 58))))
         )))
 (set-frame-size-according-to-resolution)
-
 
 
 

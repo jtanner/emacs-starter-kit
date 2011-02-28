@@ -23,6 +23,10 @@
  '(imenu-max-item-length 120)
  '(init-face-from-resources nil)
  '(ispell-program-name "aspell")
+ '(js2-auto-indent-p nil)
+ '(js2-basic-offset 2)
+ '(js2-mirror-mode nil)
+ '(js2-mode-show-parse-errors t)
  '(load-home-init-file t t)
  '(make-backup-files nil)
  '(mouse-wheel-progressive-speed t)
@@ -39,6 +43,7 @@
  '(sh-shell-file "/bin/bash")
  '(shell-file-name "/bin/bash")
  '(show-paren-mode t)
+ '(standard-indent 2)
  '(tab-width 2)
  '(tex-dvi-view-command (quote open))
  '(textile-browser-command (quote ("open" "-a" "Safari")))
@@ -51,7 +56,7 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(show-paren-match ((((class color) (background dark)) (:background "#C25F9E" :foreground "#F0EE75")))))
+ '(show-paren-match ((((class color) (background dark)) (:background "lightGrey" :foreground "black")))))
 
 (load (concat dotfiles-dir "initializers.el"))
 
