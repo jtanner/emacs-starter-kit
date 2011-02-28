@@ -12,9 +12,9 @@
   '(progn
      (require 'rvm)
      (require 'rspec-mode)
-     (require 'ruby-electric)
 
-     (add-hook 'ruby-mode-hook (lambda () (ruby-electric-mode t)))
+     ;; (require 'ruby-electric)
+     ;; (add-hook 'ruby-mode-hook (lambda () (ruby-electric-mode t)))
 
      (defun ruby-eval-region-or-last-sexp ()
        "if region active, evaluate it. otherwise last sexp"
