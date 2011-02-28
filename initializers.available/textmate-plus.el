@@ -92,7 +92,7 @@
     (setq *textmate-project-root* project-root)))
 
 (global-set-key (kbd "<C-s-268632066>") 'textmate-plus-list-project-buffers)
-(global-set-key (kbd "<C-s-268632080>") 'textmate-plus-switch-to-project)
+;; (global-set-key (kbd "<C-s-268632080>") 'textmate-plus-switch-to-project)
 (global-set-key (kbd "C-x <C-s-268632066>") 'textmate-ibuffer-current-project)
 
 (defun textmate-plus-quick-find-file ()
