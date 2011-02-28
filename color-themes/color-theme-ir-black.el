@@ -69,6 +69,10 @@
          (underline ((nil (:underline nil))))
          (viper-minibuffer-emacs ((((class color)) nil)))
 
+         ;; whitespace
+         (whitespace-tab ((t (:background "black" :foreground "grey22"))))
+         (whitespace-trailing ((t (:background "#1C120C" :foreground "grey22" :weight bold))))
+
          ;; magit
          (magit-item-highlight ((((class color) (background dark)) (:background "#222222"))))
          (magit-diff-hunk-header ((t (:inherit magit-header :foreground "yellow" :slant italic))))
