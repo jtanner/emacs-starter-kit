@@ -44,21 +44,38 @@
 
 (defvar ido-make-buffer-list-hook nil)
 
+(defun textmate-plus/get-ido-buffer-list ()
+  (let* ((ido-process-ignore-lists t)
+         ido-ignored-list
+         (ido-current-buffers (ido-get-buffers-in-frames 'current))
+         (not-visible-buffers (ido-make-buffer-list-1 (selected-frame) ido-current-buffers)))
+    (append not-visible-buffers ido-current-buffers)))
+
+(defun textmate-plus/get-project-buffer-alist (project-root)
+  (let ((all-buffers (textmate-plus/get-ido-buffer-list))
+        (project-root-regex (regexp-quote project-root))
+        project-buffers-alist)
+
+    (dolist (buffer (reverse all-buffers))
+      (with-current-buffer buffer
+        (when (and buffer-file-name
+                   (equal project-root (textmate-project-root)))
+          (aput 'project-buffers-alist (replace-regexp-in-string project-root-regex "" buffer-file-name) buffer))))
+    project-buffers-alist))
+
 (defun textmate-plus-list-project-buffers (&optional project-root)
   "Project buffers"
   (interactive)
   (let* ((project-root (or project-root (textmate-project-root)))
-         (filter-fn (lambda ()
-                      (setq prompt (format "Buffer in project `%s': " (textmate-project-root)))
-                      (setq ido-temp-list (delete-if-not (lambda (buffer)
-                                                           (with-current-buffer buffer
-                                                             (and buffer-file-name
-                                                                  (equal project-root
-                                                                         (textmate-project-root)))))
-                                                         ido-temp-list))))
-         (ido-make-buffer-list-hook (append ido-make-buffer-list-hook (list filter-fn))))
-    (ido-switch-buffer)))
+         (project-buffers (textmate-plus/get-project-buffer-alist project-root))
+         (choices (mapcar 'car project-buffers))
+         (choice (ido-completing-read (format "Buffer in project `%s': " project-root)
+                                      choices))
+         (buffer (aget project-buffers choice nil)))
+    (when buffer
+      (switch-to-buffer buffer))))
 
+; (mapcar project-buffers-alist)
 (defun textmate-plus-switch-to-project ()
   "Switch to project"
   (interactive)
@@ -113,5 +130,24 @@
                            (expand-file-name root) "/"
                            selected-file))))))
 
+(defun swap-around-regex (regex)
+  (interactive (list (read-string "Swap around text: ")))
+  (when (region-active-p)
+    (let* ((selection (filter-buffer-substring (region-beginning) (region-end) t))
+          p1
+          p2
+          (new-string
+           (with-temp-buffer
+             (insert selection)
+             (goto-char (point-min))
+             (search-forward-regexp regex)
+             (setq p2 (point))
+             (search-backward-regexp regex)
+             (setq p1 (point))
+             (format "%s%s%s"
+                     (filter-buffer-substring p2 (point-max))
+                     (filter-buffer-substring p1 p2)
+                     (filter-buffer-substring (point-min) p1)))))
+      (insert new-string))))
 (global-set-key (kbd "C-s-t") 'textmate-plus-quick-find-file)
 (global-set-key (kbd "<C-s-268632084>") 'textmate-plus-quick-find-file)
