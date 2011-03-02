@@ -6,7 +6,7 @@
 	url = http://github.com/pd/inf-ruby-bond.git
 [submodule "vendor/rspec-mode"]
 	path = vendor/rspec-mode
-	url = https://github.com/pezra/rspec-mode.git
+	url = https://github.com/timcharper/rspec-mode.git
 [submodule "vendor/rvm"]
 	path = vendor/rvm
 	url = http://github.com/senny/rvm.el.git
