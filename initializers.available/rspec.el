@@ -40,6 +40,17 @@
 (eval-after-load 'ruby-mode
   '(define-key ruby-mode-map (kbd "C-c , s-t") 'rspec-toggle-spec-and-target-other-window))
 
+
 ;; bind to CMD-r and CMD-R like in Textmate
-(define-key rspec-mode-keymap [(super r)] 'rspec-verify)
-(define-key rspec-mode-keymap [(super R)] 'rspec-verify-single)
+(defun rspec-verify-with-save ()
+  "Save all files and then run rspec-verify"
+  (interactive)
+  (force-save-all)
+  (rspec-verify))
+(defun rspec-verify-single-with-save ()
+  "Save all files and then run rspec-verify-single"
+  (interactive)
+  (force-save-all)
+  (rspec-verify-single))
+(define-key rspec-mode-keymap [(super r)] 'rspec-verify-with-save)
+(define-key rspec-mode-keymap [(super R)] 'rspec-verify-single-with-save)
