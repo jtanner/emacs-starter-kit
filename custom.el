@@ -32,6 +32,7 @@
  '(mouse-wheel-progressive-speed t)
  '(mouse-wheel-scroll-amount (quote (1 ((shift) . 1) ((control)))))
  '(org-agenda-files (quote ("~/org/")))
+ '(org-startup-folded nil)
  '(preview-transparent-color "black")
  '(quack-remap-find-file-bindings-p nil)
  '(rails-indent-and-complete nil)
