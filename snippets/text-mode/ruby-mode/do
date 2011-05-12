@@ -2,5 +2,5 @@
 #name: do ... end
 # --
 do
-$0`(indent-according-to-mode)`
+  $0
 end

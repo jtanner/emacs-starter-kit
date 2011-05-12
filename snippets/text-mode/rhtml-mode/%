@@ -1,4 +1,4 @@
 # -*- mode: ruby; require-final-newline: nil; backup-inhibited: t -*-
-#name: <% ... -%>
+#name: <% ... %>
 # --
-<% $0 -%>
+<% $0 %>

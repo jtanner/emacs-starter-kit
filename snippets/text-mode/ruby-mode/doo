@@ -1,6 +1,6 @@
 # -*- mode: ruby; require-final-newline: nil; backup-inhibited: t -*-
 #name: do |item| ... end
 # --
-do${1: |${2:item}|}
-$0`(indent-according-to-mode)`
+do |${item}|
+  $0
 end
