@@ -93,24 +93,30 @@
 (global-set-key [(control super clear)] 'kill-buffer-and-delete-window)
 
 
+;;
 ;; go to Magit status for an LMP project
+;;
+(setq project-list '(("ad" "admin")
+                     ("da" "duplicateapi")
+                     ("ds" "degreesearch")
+                     ("ch" "chef")
+                     ("ld" "lead_delivery")
+                     ("le" "leadgen_events")
+                     ("lg" "lead_gateway")
+                     ("lr" "lead_resale")
+                     ("om" "offer_match")
+                     ("rp" "reports")
+                     ("tx" "transporter")
+                     ("mk" "market")))
+(setq projects-dir "~/lmp/%s")
+(setq project-abbreviations (mapconcat 'car project-list ","))
 (defun lmp-project-dir (project-abbrev)
   (file-name-as-directory
    (expand-file-name
-    (format "~/lmp/%s"
-            (cadr (assoc project-abbrev '(("ad" "admin")
-                                          ("da" "duplicateapi")
-                                          ("ds" "degreesearch")
-                                          ("ld" "lead_delivery")
-                                          ("le" "leadgen_events")
-                                          ("lg" "lead_gateway")
-                                          ("lr" "lead_resale")
-                                          ("om" "offer_match")
-                                          ("rp" "reports")
-                                          ("tx" "transporter")
-                                          ("mk" "market"))))))))
+    (format projects-dir
+            (cadr (assoc project-abbrev project-list))))))
 (defun lmp-magit-status (project-abbrev)
-  (interactive (list (read-from-minibuffer "Project abbreviation: " nil)))
+  (interactive (list (read-from-minibuffer (concat "Projects: " project-abbreviations "\n" "Enter abbreviation: ") nil)))
   (magit-status (lmp-project-dir project-abbrev)))
 ;; key binding
 (global-set-key (kbd "C-x G") 'lmp-magit-status)
