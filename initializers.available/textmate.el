@@ -2,6 +2,9 @@
 (require 'textmate)
 (textmate-mode t)
 
+;; custom find with "-L"
+(setq textmate-find-files-command "find -L \"%s\" -type f")
+
 (defun cr-after-line (&optional stuff)
   "Insert a new line after the current line (c-a enter)"
   (interactive)
