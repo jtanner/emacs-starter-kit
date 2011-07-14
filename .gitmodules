@@ -12,7 +12,7 @@
 	url = http://github.com/senny/rvm.el.git
 [submodule "vendor/textmate"]
 	path = vendor/textmate
-	url = git://github.com/timcharper/textmate.el.git
+	url = git://github.com/defunkt/textmate.el.git
 [submodule "vendor/vimpulse"]
 	path = vendor/vimpulse
 	url = git://github.com/timcharper/vimpulse.git
