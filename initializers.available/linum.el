@@ -13,6 +13,7 @@
         html-mode
         yaml-mode
         js2-mode
+        coffee-mode
         espresso-mode
         feature-mode))
 (dolist (mode linum-modes)
